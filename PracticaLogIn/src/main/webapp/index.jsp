@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Log In</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 	<header>
