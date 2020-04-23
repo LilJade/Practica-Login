@@ -18,7 +18,7 @@ header{
 	align-items: center;
 	width: 100%;
 	padding: 10px;
-	background-color: #f6f578;
+	background-color: #f2a51a;
 }
 
 .head{
@@ -34,7 +34,7 @@ header{
 .head h1{
 	font-weight: bold;
 	font-size: 36px;
-	color: #000;
+	color: #FFF;
 }
 
 .content{
