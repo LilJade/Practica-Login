@@ -54,11 +54,12 @@ header{
 	justify-content: center;
 	align-items: center;
 	padding: 30px;
-	margin: 70px auto;
+	margin-top: 70px;
+	margin-bottom: 70px;
 	border-radius: 10px;
 	border: 2px solid #FFF;
 	background-color: #084177;
-	width: 30%;
+	width: 40%;
 }
 
 .logInForm .title{
@@ -125,9 +126,9 @@ footer{
 	align-items: center;
 	padding: 10px;
 	background-color: #f2a51a;
-	position: fixed;
-	bottom: 0;
-	height: 60px;
+/*	position: fixed;
+	bottom: 0;*/
+	height: 90px;
 	width: 100%;
 }
 

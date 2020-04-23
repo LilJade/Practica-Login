@@ -1,10 +1,12 @@
 package com.lilJade.control;
 
+import java.io.Console;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 import com.lilJade.Dao.usuarioDao;
 import com.lilJade.model.TbUsuariop;
@@ -39,8 +41,7 @@ public class servletUser extends HttpServlet {
 		// doGet(request, response);
 		String u = request.getParameter("usser");
 		String p = request.getParameter("pass");
-		System.out.println(u);
-		System.out.println(p);
+
 		TbUsuariop usser = new TbUsuariop();
 		usuarioDao ud = new usuarioDao();
 		
