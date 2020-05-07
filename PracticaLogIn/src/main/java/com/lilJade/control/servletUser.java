@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
 import com.lilJade.Dao.usuarioDao;
@@ -41,22 +42,33 @@ public class servletUser extends HttpServlet {
 		// doGet(request, response);
 		String u = request.getParameter("usser");
 		String p = request.getParameter("pass");
+		String closeSession = request.getParameter("btnClose");
 
-		TbUsuariop usser = new TbUsuariop();
-		usuarioDao ud = new usuarioDao();
-		
-		usser.setUsuario(u);
-		usser.setContrasenia(p);
-		
-		int access = ud.logInUser(usser).size();
-		
-		if(access == 1) {
-			System.out.println("¡Inicio de Sesión Exitoso!");
+		if(closeSession != null) {
+			if(closeSession.equals("Cerrar Sesion")) {
+				HttpSession close = (HttpSession) request.getSession();
+				close.invalidate();
+				
+				response.sendRedirect("index.jsp");
+			}
 		} else {
-			System.out.println("¡Error!");
+			TbUsuariop usser = new TbUsuariop();
+			usuarioDao ud = new usuarioDao();
+			
+			usser.setUsuario(u);
+			usser.setContrasenia(p);
+			
+			int access = ud.logInUser(usser).size();
+			
+			if(access == 1) {
+				HttpSession seccion = request.getSession(true);
+				seccion.setAttribute("usuario", u);
+				response.sendRedirect("principal.jsp");
+			} else {
+				System.out.println("¡Error!");
+			}
 		}
 		
-		response.sendRedirect("index.jsp");
 	}
 
 }
