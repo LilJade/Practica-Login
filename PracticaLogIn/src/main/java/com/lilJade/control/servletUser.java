@@ -2,6 +2,8 @@ package com.lilJade.control;
 
 import java.io.Console;
 import java.io.IOException;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
+import com.lilJade.Dao.historialDao;
 import com.lilJade.Dao.usuarioDao;
+import com.lilJade.model.TbHistorial;
 import com.lilJade.model.TbUsuariop;
 
 /**
@@ -61,6 +65,16 @@ public class servletUser extends HttpServlet {
 			int access = ud.logInUser(usser).size();
 			
 			if(access == 1) {
+				historialDao hd = new historialDao();
+				TbHistorial tbh = new TbHistorial();
+				Date fecha = new Date();
+				
+				tbh.setFecha(fecha);
+				usser.setIdUsuarios(usser.getIdUsuarios());
+				tbh.setTbUsuariop(usser);
+				
+				hd.registrarIngreso(tbh);
+				
 				HttpSession seccion = request.getSession(true);
 				seccion.setAttribute("usuario", u);
 				response.sendRedirect("principal.jsp");

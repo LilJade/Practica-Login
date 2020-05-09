@@ -23,6 +23,10 @@ public class usuarioDao {
 			user = em.createQuery("from TbUsuariop as u where u.usuario='"+u.getUsuario()+"' and u.contrasenia='"+u.getContrasenia()+"'").getResultList();
 			em.getTransaction().commit();
 			
+			for(TbUsuariop datoId:user) {
+				u.setIdUsuarios(datoId.getIdUsuarios());
+			}
+			
 		} catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
