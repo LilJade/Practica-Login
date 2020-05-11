@@ -53,4 +53,9 @@ public class TbHistorial implements Serializable {
 		this.tbUsuariop = tbUsuariop;
 	}
 
+	@Override
+	public String toString() {
+		return "TbHistorial [idHistorial=" + idHistorial + ", fecha=" + fecha + ", tbUsuariop=" + tbUsuariop + "]";
+	}
+
 }

@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>com.lilJade.control.servletUser</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>servletHistorial</servlet-name>
+  	<display-name>servletHistorial</display-name>
+  	<description></description>
+  	<servlet-class>com.lilJade.control.servletHistorial</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>servletUser</servlet-name>
   	<url-pattern>/servletUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>servletHistorial</servlet-name>
+  	<url-pattern>/servletHistorial</url-pattern>
   </servlet-mapping>
 </web-app>

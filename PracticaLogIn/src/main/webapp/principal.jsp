@@ -18,5 +18,6 @@
 	<form action="servletUser" method="post">
 		<input type="submit" value="Cerrar Sesion" name="btnClose">
 	</form>
+	<a href="historial.jsp">Ver historial</a>
 </body>
 </html>

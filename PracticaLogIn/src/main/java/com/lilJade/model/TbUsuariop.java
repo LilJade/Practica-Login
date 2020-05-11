@@ -95,4 +95,11 @@ public class TbUsuariop implements Serializable {
 		return tbHistorial;
 	}
 
+	@Override
+	public String toString() {
+		return "TbUsuariop [idUsuarios=" + idUsuarios + ", apellido_usuario=" + apellido_usuario + ", contrasenia="
+				+ contrasenia + ", nombre_usuario=" + nombre_usuario + ", usuario=" + usuario + ", tbHistorials="
+				+ tbHistorials + "]";
+	}
+
 }
