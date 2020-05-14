@@ -35,7 +35,7 @@ public class historialDao {
 			history = em.createQuery("SELECT h.idHistorial, u.nombre_usuario, h.fecha FROM TbHistorial AS h INNER JOIN TbUsuariop AS u ON u.idUsuarios = h.tbUsuariop.idUsuarios").getResultList();
 			em.getTransaction().commit();
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			System.out.println("Error aquí: " + e.getMessage());
 		}
 		
 		return history;
