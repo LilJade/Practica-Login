@@ -12,17 +12,33 @@
 				
 			}, function(respose){
 				let datos = JSON.parse(respose);
-				
+
 				var tablaDatos = document.getElementById('tablaHistorial');
 				for(let item of datos){
+					if(item[2] == null || item[2] == undefined){
+						item[2] = "Sin Registro"
+					}
+					
 					tablaDatos.innerHTML += `
 						<tr>
-							<td> ${item.idHistorial} </td>
-							<td> ${item.nombre_usuario} </td>
-							<td> ${item.fecha} </td>
+							<td>${item[0]}</td>
+							<td>${item[1]}</td>
+							<td>${item[2]}</td>
 						</tr>
 					`
 				}
+/*				for (var i = 0; i < datos.length; i++)
+					if(datos[i][2] == null || datos[i][2] == undefined){
+						datos[i][2] = "No Registrado"
+					}
+				
+					tablaDatos.innerHTML += `
+						<tr>
+							<td>${datos[i][0]}</td>
+							<td>${datos[i][1]}</td>
+							<td>${datos[i][2]}</td>
+						</tr>
+					`*/
 			});
 		});
 	</script>
